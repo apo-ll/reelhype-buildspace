@@ -21,16 +21,15 @@ async function fetchTrendingImages() {
 }
 
 export async function RandomItems() {
-    const res = await fetchTrendingImages()
+    
 
-    // Use Math.random to pick a random index between 0 and 12
-    if (!Array.isArray(res)) {
-        throw new Error("Expected an array of movies");
-    }
+    const data = await fetchTrendingImages()
 
-    const randomIndex = Math.floor(Math.random() * res.length);
-    const randomItem = res[randomIndex];
+    // Use Math.random to pick a random index between 0 and 9
+    const randomIndex = Math.floor(Math.random() * 10)
+    const randomItem = data.results[randomIndex]
 
+    
     return randomItem
 }
 
@@ -38,14 +37,14 @@ export function Background({ randomItem }) {
     return (
         <div className="w-full min-h-screen bg-cover">
             {randomItem && (
-                <CldImage
+                <img
                     src={`https://image.tmdb.org/t/p/original${randomItem.backdrop_path}`}
                     alt={randomItem.title || randomItem.name}
-                    fill
-                    deliveryType='fetch'
-                    className="object-cover"
+                   
+                    className="object-cover w-screen h-screen"
                 />
             )}
+            
         </div>
     )
 }

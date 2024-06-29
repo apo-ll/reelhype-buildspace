@@ -6,12 +6,12 @@ import { QueryProvider } from "@/config/query-provider";
 import { MainNav } from "@/components/main-nav";
 import { ClerkProvider } from "@clerk/nextjs";
 import { CSPostHogProvider } from "@/config/posthog-provider";
-import PostHogPageView from "./(posthog)/PostHogPageView";
+
 
 export const metadata = {
   title: "ReelHype",
   description: "Ultimate Destination for Movie & TV Trailers",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+ 
 };
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
               <div className="w-full bg-black/60 px-3 py-3">
                 <MainNav />
               </div>
-              <PostHogPageView />
+              
               {children}
             </body>
           </QueryProvider>
