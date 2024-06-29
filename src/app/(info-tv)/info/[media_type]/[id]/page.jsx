@@ -41,12 +41,12 @@ export default async function Page({ params: { media_type, id } }) {
 
   return (
     <div className="relative min-h-screen">
-      <CldImage
+      <img
         src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
         alt={original_name}
-        fill
-        deliveryType='fetch'
-        className="h-[550px] bg-cover bg-top object-cover"
+    
+  
+        className="h-[550px] w-screen bg-cover bg-top object-cover"
       />
       <div className="absolute bottom-0 left-0 right-0 top-0 h-[550px] w-full bg-gradient-to-b from-transparent to-black " />
       <div className="absolute bottom-0 left-0 right-0 top-0">
