@@ -84,7 +84,7 @@ export default async function Page({ params: { media_type, id } }) {
               <div className="flex flex-col gap-8">
                 <h1 className="text-2xl font-medium ">Comments</h1>
                 <div>
-                  <Disqus id={id} title={name || original_name || title} media_type={media_type} />
+                  <Disqus id={id} title={name || original_name || title} media_types={media_type} />
                 </div>
               </div>
 

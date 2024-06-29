@@ -3,10 +3,10 @@
 import { DiscussionEmbed } from "disqus-react";
 
 
-const Disqus = ({ id, title, media_type }) => {
+const Disqus = ({ id, title, media_types }) => {
   const disqusShortname = "cinematic-one";
   const disqusConfig = {
-    url: `http://localhost:3000/info/${media_type}/${id}`,
+    url: `http://localhost:3000/info/${media_types}/${id}`,
     identifier: id,
     title: title,
   };
